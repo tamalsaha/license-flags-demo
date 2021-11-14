@@ -2,12 +2,25 @@ package main
 
 import (
 	"fmt"
+
 	flag "github.com/spf13/pflag"
+	"gomodules.xyz/errors"
+	"gomodules.xyz/sets"
 )
+
+var knownFlags = sets.NewString("DisableAnalytics")
 
 type FeatureFlags map[string]string
 
-func(f FeatureFlags) ToSlice() []string {
+func (f FeatureFlags) IsValid() error {
+	var errs []error
+	for k := range f {
+		errs = append(errs, fmt.Errorf("unknown feature flag %q", k))
+	}
+	return errors.NewAggregate(errs)
+}
+
+func (f FeatureFlags) ToSlice() []string {
 	if len(f) == 0 {
 		return nil
 	}
@@ -24,5 +37,8 @@ func main() {
 	flag.Parse()
 
 	ff := FeatureFlags(fmap)
+	if err := ff.IsValid(); err != nil {
+		panic(err)
+	}
 	fmt.Println(ff.ToSlice())
 }

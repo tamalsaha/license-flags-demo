@@ -1,2 +1,6 @@
 github.com/spf13/pflag v1.0.5 h1:iy+VFUOCP1a+8yFto/drg2CJ5u0yRoB7fZw3DKv/JXA=
 github.com/spf13/pflag v1.0.5/go.mod h1:McXfInJRrz4CZXVZOBLb0bTZqETkiAhM9Iw0y3An2Bg=
+gomodules.xyz/errors v0.0.0-20201104190405-077f059979fd h1:KlGrMHkbsEWroVzWz0tqYvFoe7+Wl3+X91L/06shKII=
+gomodules.xyz/errors v0.0.0-20201104190405-077f059979fd/go.mod h1:tyQoNAbGt++T+hT8EWLqtgg7Z+eb5BYXAORxVkrpt2E=
+gomodules.xyz/sets v0.2.1 h1:vK3oUWoGVrZKLDKO/bzEo/ucHFdCE7+DxWPeWxK72KQ=
+gomodules.xyz/sets v0.2.1/go.mod h1:jKgNp01/iDs+svOWXaPk5cKP3VXy0mWUoTF/ore+aMc=
